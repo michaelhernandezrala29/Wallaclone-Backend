@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Register on Wallaclone</title>
+</head>
+
+<body>
+    <h1>Register on Wallaclone</h1>
+
+    <div class="loader"></div>
+
+    <form class="form" novalidate>
+        <label for="username">Username: </label>
+        <input type="text" name="username" placeholder="Introduce your username" required autofocus>
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" placeholder="Introduce your e-mail" required autofocus>
+
+        <label for="password">Password:</label>
+        <input type="password" class="password" name="password" placeholder="Introduce your password" required>
+
+        <label for="passwordConfirmation">Confirmation: </label>
+        <input type="password" class="passwordConfirmation" name="passwordConfirmation"
+            placeholder="Confirm your password" required>
+
+        <button type="submit" class="button" disabled>Sing up</button>
+
+        <div class="messages"></div>
+
+    </form>
+
+    <script type="module" src="../components/register/Register.js"></script>
+</body>
+
+</html>
