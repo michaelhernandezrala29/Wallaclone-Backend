@@ -51,7 +51,7 @@ adsSchema.statics.createRecord = function (nuevo, cb) {
   new Ads(nuevo).save(cb);
 };
 
-anuncioSchema.statics.list = async function (
+adsSchema.statics.list = async function (
   filters,
   startRow,
   numRows,

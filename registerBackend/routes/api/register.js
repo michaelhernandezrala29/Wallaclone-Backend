@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const { User } = require("../../models");
 
-// POST /authenticate
+// POST /auth/register
 router.post("/", async (req, res, next) => {
   try {
     const email = req.body.email;

@@ -1,26 +1,38 @@
 {
     "name": "registerbackend",
     "version": "1.0.0",
-    "description": "",
     "main": "index.js",
     "scripts": {
         "start": "node ./bin/www",
         "dev": "DEBUG=wallaclone:* nodemon ./bin/www",
-        "hints": "eslint . || true",
-        "installDB": "node install_db.js"
+        "installDB": "node initDb.js",
+        "hints": "eslint . || true"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.19.2",
+        "cookie-parser": "^1.4.6",
+        "cote": "^1.0.3",
+        "dotenv": "^16.0.0",
         "express": "^4.17.3",
         "fs": "^0.0.1-security",
+        "fs-extra": "^10.0.0",
+        "hash.js": "^1.1.7",
         "i18n": "^0.14.1",
         "jsonwebtoken": "^8.5.1",
+        "mongodb": "^4.4.0",
+        "mongoose": "^6.2.2",
         "mongose": "^0.0.2-security",
+        "morgan": "^1.10.0",
+        "nodejs": "^0.0.0",
         "nodemon": "^2.0.15",
         "path": "^0.12.7",
         "readline": "^1.3.0"
-    }
+    },
+    "directories": {
+        "lib": "lib"
+    },
+    "description": ""
 }

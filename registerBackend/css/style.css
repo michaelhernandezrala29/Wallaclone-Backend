@@ -15,3 +15,11 @@ table tr td img {
 .nav-link {
   padding: 0;
 }
+
+.message_error {
+  color: red;
+}
+
+.message_success {
+  color: green;
+}
