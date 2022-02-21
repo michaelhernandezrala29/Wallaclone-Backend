@@ -14,8 +14,6 @@ mongoose.connection.once("open", function () {
 const connectionPromise = mongoose.connect(process.env.MONGODB_CONNSTR, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
 });
 
 module.exports = connectionPromise;

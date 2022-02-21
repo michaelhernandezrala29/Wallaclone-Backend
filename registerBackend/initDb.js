@@ -3,7 +3,8 @@
 require("dotenv").config();
 
 const { askUser } = require("./lib/utils");
-const { mongoose, connectMongoose, Ads, User } = require("./models");
+const { mongoose, Ads, User } = require("./models");
+const { connectMongoose } = require("./lib/connectMongoose");
 
 const ADS_JSON = "./ads.json";
 require("./lib/i18nSetup");

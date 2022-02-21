@@ -27,28 +27,28 @@ const utils = {
       filters.tags = { $in: req.query.tag };
     }
 
-    if (typeof req.query.venta !== "undefined") {
-      filters.venta = req.query.venta;
+    if (typeof req.query.sell !== "undefined") {
+      filters.sell = req.query.sell;
     }
 
-    if (typeof req.query.precio !== "undefined" && req.query.precio !== "-") {
-      if (req.query.precio.indexOf("-") !== -1) {
-        filters.precio = {};
-        let rango = req.query.precio.split("-");
+    if (typeof req.query.price !== "undefined" && req.query.price !== "-") {
+      if (req.query.price.indexOf("-") !== -1) {
+        filters.price = {};
+        let rango = req.query.price.split("-");
         if (rango[0] !== "") {
-          filters.precio.$gte = rango[0];
+          filters.price.$gte = rango[0];
         }
 
         if (rango[1] !== "") {
-          filters.precio.$lte = rango[1];
+          filters.price.$lte = rango[1];
         }
       } else {
-        filters.precio = req.query.precio;
+        filters.price = req.query.price;
       }
     }
 
-    if (typeof req.query.nombre !== "undefined") {
-      filters.nombre = new RegExp("^" + req.query.nombre, "i");
+    if (typeof req.query.name !== "undefined") {
+      filters.name = new RegExp("^" + req.query.name, "i");
     }
 
     return filters;

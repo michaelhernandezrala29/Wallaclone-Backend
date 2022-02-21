@@ -1,6 +1,5 @@
-<!-- TODO: terminarlo -->
 <% include header %>
-    <h1>__(Register on Wallaclone)</h1>
+    <h1>__(Login on Wallaclone)</h1>
 
     <% include loader %>
 
@@ -15,24 +14,21 @@
                     </p>
                     <% } %>
 
-                        <form action="/register" method="post" name="form1">
+                        <form action="/login" method="post" name="form1">
                             <div class="form-group">
                                 <label for="name">__(Name)</label>
                                 <input type="name" name="name" class="form-control" id="name"
                                     aria-describedby="nameHelp" placeholder="Enter name" value="" required />
                             </div>
-                            <div class="form-group">
-                                <label for="">__(Email)</label>
-                                <input type="email" name="email" class="form-control" id="email"
-                                    aria-describedby="emailHelp" placeholder="Enter email" value="" required />
-                            </div>
+
                             <div class="form-group">
                                 <label for="password">__(Password)</label>
                                 <input type="password" name="password" class="form-control" id="password"
                                     aria-describedby="emailHelp" placeholder="*********" value="" required />
                             </div>
+
                             <input type="submit" class="btn btn-primary" value="Add" />
-                            <a href="auth/register" class="btn btn-success ml-2">Sign up</a>
+                            <a href="auth/login" class="btn btn-success ml-2">Login</a>
                         </form>
 
                         <% include footer %>

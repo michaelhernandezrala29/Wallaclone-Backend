@@ -59,11 +59,11 @@ app.use(function (err, req, res, next) {
       : `${__("not_valid")} - ${errInfo.param} ${errInfo.msg}`;
   }
 
-  // establezco el status a la respuesta
+  // Request status
   err.status = err.status || 500;
   res.status(err.status);
 
-  // si es un 500 lo pinto en el log
+  // if status is 500 write the erroe in the log
   if (err.status && err.status >= 500) console.error(err);
 
   // si es una petición al API respondo JSON...

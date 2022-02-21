@@ -1,6 +1,6 @@
 /**
- * register.js
- * Module to sign up into Wallaclone
+ * login.js
+ * Module to login into Wallaclone
  */
 "use strict";
 
@@ -9,36 +9,24 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const { User } = require("../../models");
 
-// POST /auth/register
+// POST /auth/login
 router.post("/", async (req, res, next) => {
   try {
     const name = req.body.name;
-    const email = req.body.email;
+    //const email = req.body.email;
     const password = req.body.password;
 
     const hashedPassword = User.hashPassword(password);
 
-    // Check for user
     const user = await User.findOne({
       name: name,
-      email: email,
+      //email: email,
       password: hashedPassword,
     });
 
-    // Validate name, email & password
-    if (!user.name) {
-      res.json({
-        ok: false,
-        error: "This username exist into the DB. You must choose another name.",
-      });
-      return;
-    }
-
-    if (!user.email) {
-      res.json({
-        ok: false,
-        error: "This email exist into the DB. You must choose another email.",
-      });
+    if (!user) {
+      // Credentials ok
+      res.json({ ok: false, error: "Invalid credentials." });
       return;
     }
 
